@@ -1,0 +1,138 @@
+body {
+	font-family: Arial, Helvetica, sans-serif;
+}
+.wrapper {
+	display: flex;
+		/* 100% высота экрана */
+	min-height: 100%;
+		/* чтобы контент не вышел за пределы */
+	overflow: hidden;
+	/* !display сюда и flex: 1 1 auto; в content чтобы footer можно было прижать к концу страницы */
+	flex-direction: column;
+}
+.header { 
+	background-color: rgb(61, 41, 72);
+}
+.container {
+	max-width: 1100px;
+	margin: 0px auto;
+}
+
+.header__row {
+	display: flex;
+	justify-content: space-around;
+	align-items: center;
+}
+.header__icon {
+	background-color: antiquewhite;
+	width: 50px;
+	height: 50px;
+	border-radius: 50px;
+	margin: 5px;
+	flex: 0 0 auto;
+}
+.header__menu {
+}
+.header__list li {
+    width: 80px;
+	height: 20px;
+	background-color: antiquewhite;
+	margin-left: 20px;
+}
+.header__list {
+	display: flex;
+	flex-wrap: wrap;
+}
+.content {
+	/* !display и flex: 1 1 auto; чтобы footer можно было прижать к концу страницы */
+	/* !flex: 1 ->позволяет flex элементу увеличиваться 1->позволяет flex элементу уменьшаться auto -> Базовый размер Flex элемента; */
+	flex: 1 1 auto;
+	margin: 20px 0;
+}
+.three {
+}
+.three__row {
+	display: flex;
+	margin: 0 -10px;
+}
+.three__card {
+background-color:chocolate;
+padding: 10px;
+margin: 0 10px;
+/* запрещает-увелич   разр-уменьш    задает-размер-в-процентах */
+flex: 0 1 33.333%;
+display: flex;
+flex-direction: column;
+}
+.three__image {
+	height: 120px;
+	background-color: antiquewhite;
+}
+.three__text {
+	line-height: 25px;
+}
+.two {
+}
+.two__row {
+	display: flex;
+	margin: 0 -10px;
+}
+.two__card {
+background-color:chocolate;
+padding: 10px;
+margin: 10px 10px 0 10px;
+/* запрещает-увелич   разр-уменьш    задает-размер-в-процентах */
+flex: 0 1 50%;
+display: flex;
+flex-direction: column;
+}
+.two__image {
+	height: 170px;
+	background-color: antiquewhite;
+}
+.two__text {
+	line-height: 25px;
+}
+.footer {
+	background-color: rgb(209, 209, 209);
+}
+.footer__text {
+	text-align: center;
+	/* ? размещение текста по вертикальному центру line-height выстота блока подстроится */
+	line-height: 30px;
+}
+
+@media (max-width:1100px) {
+    .container {
+        max-width: 900px;
+    }
+}
+
+@media (max-width:992px) {
+    .container {
+        max-width: 700px;
+    }
+}
+
+@media (max-width:579px) {
+    .container {
+        max-width: none;
+    }
+	.three__row, .two__row {
+		display: flex;
+		flex-wrap: wrap;
+		margin: 0 10px;
+	}
+	.three__card, .two__card {
+		/* запрещает-увелич   разр-уменьш    задает-размер-в-процентах */
+		flex: 0 1 auto;
+		margin: 10px;
+	}
+	.header__list li {
+		margin: 3px;
+	}
+	.header__list {
+		display: flex;
+		flex-direction: row-reverse;
+	}
+}
